@@ -44,7 +44,7 @@ public abstract class AbstractBasePage {
     public void navigateTo(String component){
         String locator = "//a[text()='"+component+"']";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
-
+        BrowserUtilities.wait(3);
     }
 
     public String getPageSubtitleText(){

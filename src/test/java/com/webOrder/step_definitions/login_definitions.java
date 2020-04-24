@@ -5,6 +5,7 @@ import com.webOrder.utilities.BrowserUtilities;
 import com.webOrder.utilities.ConfigurationReader;
 import com.webOrder.utilities.Driver;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 
 /**
  * @author:
@@ -30,7 +31,9 @@ public class login_definitions {
 
     @Then("verify the page login text is a Web Orders")
     public void verify_the_page_login_text_is_a_Web_Orders() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String expected_logo = "Web Orders";
+        String Actual_login_logo = loginPage.getLogin_Logo();
+        Assert.assertEquals(expected_logo,Actual_login_logo);
+
     }
 }

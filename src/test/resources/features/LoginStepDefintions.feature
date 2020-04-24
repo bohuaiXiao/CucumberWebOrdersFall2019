@@ -4,5 +4,5 @@ Feature: Login step
   Background: open login page
     Given user is on the login page
   Scenario: Login with "username" and "password"
-    When user enter "username" and "password"
+    When user enter "Tester" and "test"
     Then verify the page login text is a Web Orders

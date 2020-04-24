@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = "com/webOrder/step_definitions",
         features = "src/test/resources/features",
-        dryRun = true,
+        dryRun = false,
         strict = false,
-        tags = "@login_Task",
+        tags = "@add_order",
         plugin = {
                 "html:target/default-report",
                 "json:target/cucumber3.json"

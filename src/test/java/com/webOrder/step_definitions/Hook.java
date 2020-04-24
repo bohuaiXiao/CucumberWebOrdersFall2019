@@ -1,5 +1,6 @@
 package com.webOrder.step_definitions;
 
+import com.webOrder.utilities.ConfigurationReader;
 import com.webOrder.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,9 +14,12 @@ import org.openqa.selenium.TakesScreenshot;
  * @date:
  */
 public class Hook {
-    @Before(order = 2)
-    public void setup() {
-        System.out.println("Test setup");
+    @Before
+    public void setup(Scenario scenario) {
+        System.out.println("Starting test automation");
+        System.out.println("Tester type::"+ ConfigurationReader.getProperty("browser"));
+        System.out.println("Environment ::" + ConfigurationReader.getProperty("url"));
+        System.out.println("Test scenario ::"+scenario.getName());
         Driver.getDriver().manage().window().maximize();
     }
 
